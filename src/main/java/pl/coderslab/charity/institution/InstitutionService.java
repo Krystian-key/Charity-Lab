@@ -1,18 +1,18 @@
 package pl.coderslab.charity.institution;
 
-import pl.coderslab.charity.institution.domain.Insitution;
+import pl.coderslab.charity.institution.domain.Institution;
 
 import java.util.List;
 
 public interface InstitutionService {
 
-    List<Insitution> findAll();
+    List<Institution> findAll();
 
-    Insitution findById(Long id);
+    Institution findById(Long id);
 
-    Insitution create(Insitution insitution);
+    Institution create(Institution institution);
 
-    Insitution update(Insitution insitution, Long id);
+    Institution update(Institution institution, Long id);
 
     void delete(Long id);
 }

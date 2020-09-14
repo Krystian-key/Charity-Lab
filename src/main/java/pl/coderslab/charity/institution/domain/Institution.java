@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Insitution {
+public class Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

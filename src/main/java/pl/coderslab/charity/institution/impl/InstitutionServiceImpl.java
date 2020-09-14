@@ -2,7 +2,7 @@ package pl.coderslab.charity.institution.impl;
 
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.institution.InstitutionService;
-import pl.coderslab.charity.institution.domain.Insitution;
+import pl.coderslab.charity.institution.domain.Institution;
 
 import java.util.List;
 
@@ -10,22 +10,22 @@ import java.util.List;
 public class InstitutionServiceImpl implements InstitutionService {
 
     @Override
-    public List<Insitution> findAll() {
+    public List<Institution> findAll() {
         return null;
     }
 
     @Override
-    public Insitution findById(Long id) {
+    public Institution findById(Long id) {
         return null;
     }
 
     @Override
-    public Insitution create(Insitution insitution) {
+    public Institution create(Institution institution) {
         return null;
     }
 
     @Override
-    public Insitution update(Insitution insitution, Long id) {
+    public Institution update(Institution institution, Long id) {
         return null;
     }
 
