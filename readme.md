@@ -2,6 +2,7 @@
 
 ## About Aplication:
 - The aim of the project is to create a place where everyone can donate unnecessary things to trusted institutions.
+- Current development status of the application on the branch called <b>develop</b>
 
 ## Technologies which I used:
 - Spring Boot
