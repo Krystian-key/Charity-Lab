@@ -26,10 +26,10 @@ public class Donation {
     @NotNull
     private Integer quantity;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @OneToMany
     private List<Category> categories;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private Institution institution;
 
     @NotNull

@@ -1,12 +1,14 @@
 package pl.coderslab.charity.donation.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.coderslab.charity.donation.DonationService;
 import pl.coderslab.charity.donation.domain.Donation;
 
 import java.util.List;
 
 @Service
+/*@Transactional*/ // błąd z Eager, transacitonal + readonly = true
 public class DonationServiceImpl implements DonationService {
 
     @Override
