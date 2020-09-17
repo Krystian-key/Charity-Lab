@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.charity.donation.DonationRepository;
 import pl.coderslab.charity.donation.DonationService;
 import pl.coderslab.charity.donation.domain.Donation;
-import pl.coderslab.charity.institution.InstitutionRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;

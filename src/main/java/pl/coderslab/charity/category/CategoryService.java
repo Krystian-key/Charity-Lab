@@ -13,7 +13,7 @@ public interface CategoryService {
 
     Category findById(Long id);
 
-    Category create(Category category);
+    Long create(Category category);
 
     Category update(Category category, Long id);
 
