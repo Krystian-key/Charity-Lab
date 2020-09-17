@@ -25,7 +25,7 @@ public class CategoryController {
     }
 
     @PostMapping
-    public Category create(@RequestBody Category category) {
+    public Long create(@RequestBody Category category) {
         return categoryService.create(category);
     }
 

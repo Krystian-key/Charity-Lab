@@ -51,4 +51,14 @@ public class DonationServiceImpl implements DonationService {
         donationRepository.delete(donationById);
 
     }
+
+    @Override
+    public Integer bagsQuantity() {
+        return donationRepository.findSumBagsQuantity();
+    }
+
+    @Override
+    public Integer donationQuantity() {
+        return donationRepository.findAllDonationCount();
+    }
 }
