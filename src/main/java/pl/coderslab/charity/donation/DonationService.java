@@ -10,7 +10,7 @@ public interface DonationService {
 
     Donation findById(Long id);
 
-    Donation create(Donation donation);
+    Long create(Donation donation);
 
     Donation update(Donation donation, Long id);
 
