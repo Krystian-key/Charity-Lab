@@ -10,7 +10,7 @@ public interface InstitutionService {
 
     Institution findById(Long id);
 
-    Institution create(Institution institution);
+    Long create(Institution institution);
 
     Institution update(Institution institution, Long id);
 

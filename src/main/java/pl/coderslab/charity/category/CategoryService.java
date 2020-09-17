@@ -1,7 +1,6 @@
 package pl.coderslab.charity.category;
 
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import pl.coderslab.charity.category.domain.Category;
 
@@ -14,7 +13,7 @@ public interface CategoryService {
 
     Category findById(Long id);
 
-    Category create(Category category);
+    Long create(Category category);
 
     Category update(Category category, Long id);
 
