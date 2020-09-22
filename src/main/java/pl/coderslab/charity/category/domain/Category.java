@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
+// konstuktor z nazwa zamiast setera
 @Entity
 @Setter
 @Getter
