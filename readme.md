@@ -17,7 +17,6 @@ Project status: work in progress
  - viewing, editing, deleting registered users,
  - an overview of the donations.
 - the possibility of defining the status of gifts (submitted / received / given)
-(we add an additional entity and link for statuses)
 ````
 ````
 2. User profile:
@@ -57,6 +56,7 @@ Project status: work in progress
 - Lombok
 - Maven
 - Git
+- MySQL
 - JSP
 ````
 
