@@ -164,6 +164,12 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary zeby dynamicznie budowac widok podsumowania
+
+      /*let street = document.getElementById("street").value;
+      document.getElementById("resumeSt").innerText = street;
+      console.log(street)}
+      pobrać sobie po id i wyswietlic kazde
+      */
     }
 
   }

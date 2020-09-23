@@ -170,7 +170,8 @@
                                 Kod pocztowy <form:input type="text" name="postcode" path="zipCode"/>
                             </label>
                         </div>
-<%--
+
+<%-- TEGO POLA NIE MA?_>_>
                                                     <div class="form-group form-group--inline">
                                                         <label>
                                                             Numer telefonu <form:input type="phone" name="phone" path="phoneNumber"/>
@@ -257,11 +258,11 @@
     </div>
 </section>
 
-<script>
+<%--<script>
     function resume() {
         let street = document.getElementById("street").value;
         document.getElementById("resumeSt").innerText = street;
         console.log(street)}
-</script>
+</script>--%>
 <script src="<c:url value="/resources/js/app.js"/>"></script>
 <%@ include file="footer.jsp" %>

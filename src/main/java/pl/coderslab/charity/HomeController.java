@@ -40,16 +40,15 @@ public class HomeController {
         return "form";
     }
 
+    // tutaj czy w home controller
     @PostMapping("form")
-    public String makeDonationPost(@ModelAttribute Donation donation) {
+    public String createDonationAndRedirect(@ModelAttribute Donation donation) {
         donationService.create(donation);
         return "redirect:/confirm";
     }
 
     @GetMapping("confirm")
-    public String donationConfirm() {
+    public String confirmDonations() {
         return "form-confirmation";
     }
-
-
 }
