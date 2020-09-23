@@ -63,26 +63,39 @@ Project status: work in progress
 
 ## Job distribution tools:
 
-![Screenshot](readme-img/trello.png)
+![Screenshot](trello.png)
 ````
 ````
 
 ## Page layout:
-![Screenshot](readme-img/trello.png)
+
+![Screenshot](siteTop.png)
 ````
 ````
-![Screenshot](readme-img/trello.png)
+![Screenshot](siteMid.png)
 ````
 ````
-![Screenshot](readme-img/trello.png)
+![Screenshot](siteSMid.png)
 ````
 ````
-![Screenshot](readme-img/trello.png)
+![Screenshot](siteBottom.png)
 ````
 ````
-![Screenshot](readme-img/trello.png)
+![Screenshot](donations1.png)
 ````
 ````
-![Screenshot](readme-img/trello.png)
+![Screenshot](donation2.png)
+````
+````
+![Screenshot](donattion3.png)
+````
+````
+![Screenshot](donation4.png)
+````
+````
+![Screenshot](podsumowanieda.png)
+````
+````
+![Screenshot](final.png)
 ````
 ````
