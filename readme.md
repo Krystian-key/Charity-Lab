@@ -1,10 +1,55 @@
-## Hello There, Im Krystian Kluczkiewicz here below You will find some informations Charity-Lab Aplication! 👋
-
 ## About Aplication:
-- The aim of the project is to create a place where everyone can donate unnecessary things to trusted institutions.
-- Current development status of the application on the branch called <b>develop</b>
+````
+The goal of the project is to create a place where everyone can donate unnecessary things to trusted institutions.
+````
+````
+Current development status of the application on the branch called - develop
+Project status: work in progress
+````
 
-## Technologies which I used:
+## Functionalities:
+
+````
+1. Administrator profile:
+ - logging in
+ - management of CRUD administrators,
+ - CRUD management of trusted institutions,
+ - viewing, editing, deleting registered users,
+ - an overview of the donations.
+- the possibility of defining the status of gifts (submitted / received / given)
+(we add an additional entity and link for statuses)
+````
+````
+2. User profile:
+ - registration,
+ - logging in (the same form as for the administrator),
+ - editing your own profile (basic data),
+ - adding gifts only after logging in,
+ - viewing, editing, deleting donations,
+ - indicating that the gift has been given to someone (archiving).
+ ````
+````
+3. Users
+- user roles (ROLE_USER, ROLE_ADMIN)
+- admin panel based on a ready ** Sb Admin ** template
+````
+````
+4. CRUD
+- four basic functions for managing it in applications that use persistent memory.
+````
+
+````
+5. Additional functionalities
+- confirmation of account activation via a message sent to the email provided during registration,
+- support for forgotten passwords,
+- validation of correct input of two identical passwords,
+- administrator service validation (e.g. no possibility to delete the last existing administrator).
+````
+
+## Languages and Tools Used:
+
+````
+- Java
 - Spring Boot
 - Spring Form
 - Hibernate
@@ -12,12 +57,32 @@
 - Lombok
 - Maven
 - Git
+- JSP
+````
 
 
-## Languages and Tools Used: 
-<img align="left" src="https://devicons.github.io/devicon/devicon.git/icons/java/java-original-wordmark.svg" alt="java" width="45"/>
-<img align="left" src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="45"/>
-<img align="left" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="45"/>
-<img align="left" src="https://devicons.github.io/devicon/devicon.git/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="45"/> 
-<img align="left" src="https://avatars3.githubusercontent.com/u/348262?s=200&v=4" alt="mysql" width="45"/> 
-<img align="left" src="https://avatars2.githubusercontent.com/u/7658037?s=200&v=4" width="45"/> 
+## Job distribution tools:
+
+![Screenshot](readme-img/trello.png)
+````
+````
+
+## Page layout:
+![Screenshot](readme-img/trello.png)
+````
+````
+![Screenshot](readme-img/trello.png)
+````
+````
+![Screenshot](readme-img/trello.png)
+````
+````
+![Screenshot](readme-img/trello.png)
+````
+````
+![Screenshot](readme-img/trello.png)
+````
+````
+![Screenshot](readme-img/trello.png)
+````
+````
