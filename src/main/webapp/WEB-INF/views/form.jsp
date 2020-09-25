@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="pl">
@@ -38,7 +38,7 @@
     <div class="slogan container container--90">
         <div class="slogan--item">
             <h1>
-                Oddaj rzeczy, których już nie chcesz<br />
+                Oddaj rzeczy, których już nie chcesz<br/>
                 <span class="uppercase">potrzebującym</span>
             </h1>
 
@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <div class="form--steps-container">
+    <div class="form--steps-container ">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
         <form:form method="post" modelAttribute="donation" id="myForm">
@@ -158,48 +158,54 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input type="text" name="address" path="street" id="street"/> </label>
-                        </div>
-
-                        <div class="form-group form-group--inline">
-                            <label> Miasto <form:input type="text" name="city" path="city"/> </label>
+                            <label>
+                                Ulica <form:input type="text" name="address" path="street" id="street"/>
+                            </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <form:input type="text" name="postcode" path="zipCode"/>
+                                Miasto <form:input type="text" name="city" path="city" id="city"/>
                             </label>
                         </div>
 
-<%-- TEGO POLA NIE MA?_>_>
-                                                    <div class="form-group form-group--inline">
-                                                        <label>
-                                                            Numer telefonu <form:input type="phone" name="phone" path="phoneNumber"/>
-                                                        </label>
-                                                    </div>--%>
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Kod pocztowy <form:input type="text" name="postcode" path="zipCode" id="zipCode"/>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Numer telefonu <form:input type="phone" name="phone" path="phoneNumber" id="phoneNumber"/>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input type="date" name="data" path="pickUpDate"/> </label>
-                        </div>
-
-                        <div class="form-group form-group--inline">
-                            <label> Godzina <form:input type="time" name="time" path="pickUpTime"/> </label>
+                            <label>
+                                Data <form:input type="date" name="data" path="pickUpDate" id="pickUpDate"/>
+                            </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Uwagi dla kuriera
-                                <form:textarea name="more_info" rows="5" path="pickUpComment"/>
+                                Godzina <form:input type="time" name="time" path="pickUpTime" id="pickUpTime"/>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Uwagi dla kuriera <form:textarea name="more_info" rows="5" path="pickUpComment" id="pickUpComment"/>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" onclick="resume()"  class="btn next-step">Dalej</button>
+                    <button type="button" onclick="resume()" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -232,18 +238,18 @@
                             <h4>Adres odbioru:</h4>
                             <ul>
                                 <li><span id="resumeSt">Prosta 51</span></li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li><span id="resumeCity">Warszawa</span></li>
+                                <li><span id="resumeZipCode">99-098</span></li>
+                                <li><span id="resumePhoneNumber">123 456 789</span></li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li><span id="resumeDate">13/12/2018</span></li>
+                                <li><span id="resumeTime">15:40</span></li>
+                                <li><span id="resumeDetails">Brak uwag</span></li>
                             </ul>
                         </div>
                     </div>
@@ -257,12 +263,5 @@
         </form:form>
     </div>
 </section>
-
-<%--<script>
-    function resume() {
-        let street = document.getElementById("street").value;
-        document.getElementById("resumeSt").innerText = street;
-        console.log(street)}
-</script>--%>
 <script src="<c:url value="/resources/js/app.js"/>"></script>
 <%@ include file="footer.jsp" %>

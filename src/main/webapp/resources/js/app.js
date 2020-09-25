@@ -163,13 +163,49 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
-      // TODO: get data from inputs and show them in summary zeby dynamicznie budowac widok podsumowania
+     /* const step = form.querySelector("form > div.active");
+      switch(this.currentStep) {
+        case 2: {
+          // validate fields from first step
+          const checked = step.querySelectorAll("input:checked");
+          if (checked.length === 0) {
+            this.currentStep--;
+            return;
+          }
+          break;
+        }
+      }*/
 
-      /*let street = document.getElementById("street").value;
+
+
+      let street = document.getElementById("street").value;
       document.getElementById("resumeSt").innerText = street;
-      console.log(street)}
-      pobrać sobie po id i wyswietlic kazde
-      */
+      console.log(street)
+
+      let city = document.getElementById("city").value;
+      document.getElementById("resumeCity").innerText = city;
+      console.log(city)
+
+      let zipCode = document.getElementById("zipCode").value;
+      document.getElementById("resumeZipCode").innerText = zipCode;
+      console.log(zipCode)
+
+      let resumeDate = document.getElementById("pickUpDate").value;
+      document.getElementById("resumeDate").innerText = resumeDate;
+      console.log(resumeDate)
+
+      let resumeTime = document.getElementById("pickUpTime").value;
+      document.getElementById("resumeTime").innerText = resumeTime;
+      console.log(resumeTime)
+
+      let resumeDetails = document.getElementById("pickUpComment").value;
+      document.getElementById("resumeDetails").innerText = resumeDetails;
+      console.log(resumeDetails)
+
+      let resumePhoneNumber = document.getElementById("phoneNumber").value;
+      document.getElementById("resumePhoneNumber").innerText = resumePhoneNumber;
+      console.log(resumePhoneNumber)
+
     }
 
   }
