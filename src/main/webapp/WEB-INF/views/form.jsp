@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <div class="form--steps-container ">
+    <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
         <form:form method="post" modelAttribute="donation" id="myForm">
@@ -94,8 +94,8 @@
                 <c:forEach var="categories" items="${category}">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:checkbox path="categories" value="${categories.id}"/>
-                            <span class="checkbox"></span>
+                            <form:checkbox path="categories" id="categoryCheckbox" value="${categories.id}" />
+                            <span class="checkbox" id="checkBoxesValidation"></span>
                             <span class="description">${categories.name}</span>
                         </label>
                     </div>
@@ -113,7 +113,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <form:input path="quantity"/>
+                        <form:input path="quantity" type="number"/>
                     </label>
                 </div>
 
@@ -131,7 +131,7 @@
                 <c:forEach var="institution" items="${institution}">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:radiobutton path="institution" value="${institution.id}"/>
+                            <form:radiobutton path="institution" id="foundationRadio" value="${institution.id}"/>
                                 <%--                        <input type="radio" name="organization" value="old"/>--%>
                             <span class="checkbox radio"></span>
                             <span class="description">
@@ -177,7 +177,8 @@
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <form:input type="phone" name="phone" path="phoneNumber" id="phoneNumber"/>
+                                Numer telefonu <form:input type="phone" name="phone" path="phoneNumber"
+                                                           id="phoneNumber"/>
                             </label>
                         </div>
                     </div>
@@ -198,7 +199,8 @@
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Uwagi dla kuriera <form:textarea name="more_info" rows="5" path="pickUpComment" id="pickUpComment"/>
+                                Uwagi dla kuriera <form:textarea name="more_info" rows="5" path="pickUpComment"
+                                                                 id="pickUpComment"/>
                             </label>
                         </div>
                     </div>
@@ -219,15 +221,16 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span class="summary--text" id="category-result">
+
+                                </span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
+                                <span class="summary--text" id="foundation-result">
+
+                                </span
                                 >
                             </li>
                         </ul>
