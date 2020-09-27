@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="pl">
@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css">
 </head>
 <body>
 <header class="header--form-page">
@@ -38,7 +39,7 @@
     <div class="slogan container container--90">
         <div class="slogan--item">
             <h1>
-                Oddaj rzeczy, których już nie chcesz<br />
+                Oddaj rzeczy, których już nie chcesz<br/>
                 <span class="uppercase">potrzebującym</span>
             </h1>
 
@@ -94,8 +95,8 @@
                 <c:forEach var="categories" items="${category}">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:checkbox path="categories" value="${categories.id}"/>
-                            <span class="checkbox"></span>
+                            <form:checkbox path="categories" id="categoryCheckbox" value="${categories.id}" />
+                            <span class="checkbox" id="checkBoxesValidation"></span>
                             <span class="description">${categories.name}</span>
                         </label>
                     </div>
@@ -113,7 +114,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <form:input path="quantity"/>
+                        <form:input id="quantity" path="quantity" type="number"/>
                     </label>
                 </div>
 
@@ -131,7 +132,7 @@
                 <c:forEach var="institution" items="${institution}">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:radiobutton path="institution" value="${institution.id}"/>
+                            <form:radiobutton path="institution" id="foundationRadio" value="${institution.id}"/>
                                 <%--                        <input type="radio" name="organization" value="old"/>--%>
                             <span class="checkbox radio"></span>
                             <span class="description">
@@ -158,48 +159,56 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input type="text" name="address" path="street" id="street"/> </label>
-                        </div>
-
-                        <div class="form-group form-group--inline">
-                            <label> Miasto <form:input type="text" name="city" path="city"/> </label>
+                            <label>
+                                Ulica <form:input type="text" name="address" path="street" id="street"/>
+                            </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <form:input type="text" name="postcode" path="zipCode"/>
+                                Miasto <form:input type="text" name="city" path="city" id="city"/>
                             </label>
                         </div>
 
-<%-- TEGO POLA NIE MA?_>_>
-                                                    <div class="form-group form-group--inline">
-                                                        <label>
-                                                            Numer telefonu <form:input type="phone" name="phone" path="phoneNumber"/>
-                                                        </label>
-                                                    </div>--%>
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Kod pocztowy <form:input type="text" name="postcode" path="zipCode" id="zipCode"/>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Numer telefonu <form:input type="phone" name="phone" path="phoneNumber"
+                                                           id="phoneNumber"/>
+                            </label>
+                        </div>
                     </div>
 
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input type="date" name="data" path="pickUpDate"/> </label>
-                        </div>
-
-                        <div class="form-group form-group--inline">
-                            <label> Godzina <form:input type="time" name="time" path="pickUpTime"/> </label>
+                            <label>
+                                Data <form:input type="date" name="data" path="pickUpDate" id="pickUpDate"/>
+                            </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Uwagi dla kuriera
-                                <form:textarea name="more_info" rows="5" path="pickUpComment"/>
+                                Godzina <form:input type="time" name="time" path="pickUpTime" id="pickUpTime"/>
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Uwagi dla kuriera <form:textarea name="more_info" rows="5" path="pickUpComment"
+                                                                 id="pickUpComment"/>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" onclick="resume()"  class="btn next-step">Dalej</button>
+                    <button type="button" onclick="resume()" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -213,15 +222,16 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span class="summary--text" id="category-result">
+
+                                </span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
+                                <span class="summary--text" id="foundation-result">
+
+                                </span
                                 >
                             </li>
                         </ul>
@@ -232,18 +242,18 @@
                             <h4>Adres odbioru:</h4>
                             <ul>
                                 <li><span id="resumeSt">Prosta 51</span></li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li><span id="resumeCity">Warszawa</span></li>
+                                <li><span id="resumeZipCode">99-098</span></li>
+                                <li><span id="resumePhoneNumber">123 456 789</span></li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li><span id="resumeDate">13/12/2018</span></li>
+                                <li><span id="resumeTime">15:40</span></li>
+                                <li><span id="resumeDetails">Brak uwag</span></li>
                             </ul>
                         </div>
                     </div>
@@ -257,12 +267,6 @@
         </form:form>
     </div>
 </section>
-
-<%--<script>
-    function resume() {
-        let street = document.getElementById("street").value;
-        document.getElementById("resumeSt").innerText = street;
-        console.log(street)}
-</script>--%>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js"></script>
 <script src="<c:url value="/resources/js/app.js"/>"></script>
 <%@ include file="footer.jsp" %>

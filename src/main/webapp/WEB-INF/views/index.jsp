@@ -11,6 +11,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css">
 </head>
 <body>
 <%@include file="header.jsp"%>
@@ -34,6 +35,7 @@
 
     </div>
 </section>
+
 
 <section class="steps">
     <h2>Wystarczą 4 proste kroki</h2>

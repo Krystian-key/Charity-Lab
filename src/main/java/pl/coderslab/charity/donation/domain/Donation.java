@@ -52,5 +52,8 @@ public class Donation {
     @NotNull
     private String pickUpComment;
 
+    @NotNull
+    private Integer phoneNumber;
+
 }
 
