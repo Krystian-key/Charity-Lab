@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css">
 </head>
 <body>
 <header class="header--form-page">
@@ -113,7 +114,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <form:input path="quantity" type="number"/>
+                        <form:input id="quantity" path="quantity" type="number"/>
                     </label>
                 </div>
 
@@ -266,5 +267,6 @@
         </form:form>
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js"></script>
 <script src="<c:url value="/resources/js/app.js"/>"></script>
 <%@ include file="footer.jsp" %>

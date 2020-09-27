@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     document.querySelectorAll(".form-group--dropdown select").forEach(el => {
         new FormSelect(el);
     });
@@ -126,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$next.forEach(btn => {
                 btn.addEventListener("click", e => {
                     e.preventDefault();
-                    if(this.isValid()){
+                    if (this.isValid()) {
                         this.currentStep++;
                         this.updateForm();
                     }
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$prev.forEach(btn => {
                 btn.addEventListener("click", e => {
                     e.preventDefault();
-                    if(this.isValid()){
+                    if (this.isValid()) {
                         this.currentStep--;
                         this.updateForm();
                     }
@@ -155,15 +156,73 @@ document.addEventListener("DOMContentLoaded", function () {
          */
 
 
-        isValid(){
+        isValid() {
             switch (this.currentStep) {
                 case 1: {
-                    const checkBox = document.querySelectorAll("input[name=categories]:checked");
-                    if(checkBox.length===0){
+                    let checkBox = document.querySelectorAll("input[name=categories]:checked");
+                    if (checkBox.length === 0) {
+                        alert("Wybierz minimum jedna kategorię!");
+                        return false;
 
+                    }
+                    break;
+                }
+                case 2: {
+                    let quantity = document.getElementById("quantity").value;
+                    if (!quantity.match("^(?!0+$)\\d+$")) {
+                        alert("Zapisz poprawną ilość worków");
                         return false;
                     }
                     break;
+                }
+                case 3: {
+                    let radioFoundation = document.querySelector('#foundationRadio:checked');
+                    if (radioFoundation === null) {
+                        alert("Wybierz organizacje");
+                        return false;
+                    }
+                    break;
+                }
+                case 4: {
+                    let street = document.getElementById("street").value;
+                    if (street === '') {
+                        alert("nazwa ulicy nie może być pusta!");
+                        return false;
+                    }
+                    let city = document.getElementById("city").value;
+                    if (city === '') {
+                        alert("nazwa miasta nie może być pusta!")
+                        return false;
+                    }
+                    let zip = document.getElementById("zipCode").value;
+                    if (!zip.match("^\\d{5,}$")) {
+                        alert("kod pocztowy musi mieć 5 cyfr!")
+                        return false;
+                    }
+                    let phoneNumber = document.getElementById("phoneNumber").value;
+                    if (!phoneNumber.match("^\\d{9,9}$")) {
+                        alert("Numer telefonu musi mieć 9 cyfr!")
+                        return false;
+                    }
+                    let date = document.getElementById("pickUpDate").value;
+                    if (date === '') {
+                        alert("Podaj pełną Datę!")
+                        return false;
+                    }
+                    let time = document.getElementById("pickUpTime").value;
+                    if (!time.match("^([0-1][0-9]|[2][0-3]):([0-5][0-9])$")) {
+                        alert("Wpisz prawidłową godzinę:")
+                        return false;
+                    }
+                    let comment = document.getElementById("pickUpComment").value;
+                    if (comment === '') {
+                        alert("Dodaj komentarz dla kuriera :)")
+                        return false;
+
+                    }
+                    break;
+
+
                 }
             }
 
@@ -188,28 +247,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             let checkboxCategory = document.querySelectorAll('#categoryCheckbox:checked');
-            let categoryResult=document.getElementById('category-result');
+            let categoryResult = document.getElementById('category-result');
             let categoryValue = [];
 
-            checkboxCategory.forEach(function ( element) {
+            checkboxCategory.forEach(function (element) {
                 categoryValue.push(element.parentElement.querySelector('span.description').innerText);
             })
             console.log(categoryValue);
 
             let worki = document.querySelector('#quantity');
 
-            categoryResult.innerText=worki.value + ' worków ' + categoryValue.join(', ');
+            categoryResult.innerText = worki.value + ' worków ' + categoryValue.join(', ');
 
 
-
-            let radioFoundation =document.querySelector('#foundationRadio:checked');
+            let radioFoundation = document.querySelector('#foundationRadio:checked');
             let institution = document.getElementById('foundation-result');
-            if (radioFoundation !== null){
+            if (radioFoundation !== null) {
                 institution.innerText = radioFoundation.parentElement.querySelector('div.title').innerText;
             }
-
-
-
 
 
             let street = document.getElementById("street").value;
@@ -241,8 +296,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(resumePhoneNumber)
 
 
-
-
         }
 
     }
@@ -251,7 +304,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form !== null) {
         new FormSteps(form);
     }
-
 
 
 });

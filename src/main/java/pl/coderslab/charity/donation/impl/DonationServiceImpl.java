@@ -58,7 +58,7 @@ public class DonationServiceImpl implements DonationService {
     }
 
     @Override
-    public Integer donationQuantity() {
-        return donationRepository.findAllDonationCount();
+    public Long donationQuantity() {
+        return donationRepository.count();
     }
 }
